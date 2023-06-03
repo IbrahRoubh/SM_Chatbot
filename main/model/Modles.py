@@ -40,6 +40,7 @@ class Product(db.Model):
     price = db.Column(db.Integer)
     size = db.Column(db.String(3))
     color = db.Column(db.String(60))
+    photo = db.Column(db.String(250))
     p_code = db.Column(db.String(60), primary_key=True)
     e_storename = db.Column(db.String(250), db.ForeignKey("e_store.name"))
 

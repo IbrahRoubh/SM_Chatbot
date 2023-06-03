@@ -15,7 +15,8 @@ def get_three_random_products():
                 'size': product.size,
                 'color': product.color,
                 'code': product.p_code,
-                'stock': product.stock
+                'stock': product.stock,
+                'photo': product.photo
             }
         }
         product_list.append(product_data)
