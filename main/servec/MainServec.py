@@ -90,3 +90,25 @@ def track_order(data):
         'state': query_result.o_state
     }
     return order
+
+
+def random_products_by_category(data):
+    category = data.get('category')
+    query_result = Modles.Product.query.filter(Modles.Product.category.like(category)).all()
+    random_products = random.sample(query_result, 3)
+    product_list = []
+    for index, product in enumerate(random_products, start=1):
+        product_data = {
+            f'p{index}': {
+                'category': product.category,
+                'price': product.price,
+                'size': product.size,
+                'color': product.color,
+                'code': product.p_code,
+                'stock': product.stock,
+                'photo': product.photo
+            }
+        }
+        product_list.append(product_data)
+    return product_list
+
