@@ -94,7 +94,6 @@ def track_order(data):
 
 def random_products_by_category(data):
     category = data.get('category')
-    print(category)
     query_result = Modles.Product.query.filter(Modles.Product.category.like(f'%{category}%')).all()
     random_products = random.sample(query_result, 3)
     product_list = []
