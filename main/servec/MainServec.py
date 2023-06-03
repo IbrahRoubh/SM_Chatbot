@@ -33,7 +33,8 @@ def get_product_by_code(code):
             'size': query_result.size,
             'code': query_result.p_code,
             'color': query_result.color,
-            'stock': query_result.stock
+            'stock': query_result.stock,
+            'photo': query_result.photo
         }
         return product
     else:
